@@ -5,9 +5,10 @@ import style from './style';
 const Footer = () => (
 	<header class={style.header}>
 		<nav>
-			<Link activeClassName={style.active} href="/">Home</Link>
-			<Link activeClassName={style.active} href="/page2">Page 2</Link>
-			<Link activeClassName={style.active} href="/page3">Page 3</Link>
+			<Link activeClassName={style.active} href="/">Upcoming</Link>
+			<Link activeClassName={style.active} href="/calendar">Calendar</Link>
+			<Link activeClassName={style.active} href="/assignments">Assignments</Link>
+			<Link activeClassName={style.active} href="/courses">Courses</Link>
 		</nav>
 	</header>
 );

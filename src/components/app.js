@@ -1,12 +1,15 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
+import { Provider } from 'preact-redux';
+import store from '../state/redux';
 
 import Header from './header';
 import Footer from './footer';
 
-import Home from '../routes/home';
-import Page2 from '../routes/second';
-import Page3 from '../routes/third';
+import Upcoming from '../routes/upcoming';
+import Calendar from '../routes/calendar';
+import Assignments from '../routes/assignments';
+import Courses from '../routes/courses';
 import Profile from '../routes/profile';
 
 if (module.hot) {
@@ -25,17 +28,19 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<div id="app">
-				<Header />
-				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Page2 path="/page2" />
-					<Page3 path="/page3" />
-					<Profile path="/profile/" user="me" />
-					<Profile path="/profile/:user" />
-				</Router>
-				<Footer />
-			</div>
+			<Provider store={store}>
+				<div id="app">
+					<Header />
+					<Router onChange={this.handleRoute}>
+						<Upcoming path="/" />
+						<Calendar path="/calendar" />
+						<Assignments path="/assignments" />
+						<Courses path="/courses" />
+						<Profile path="/profile/:user" />
+					</Router>
+					<Footer />
+				</div>
+			</Provider>
 		);
 	}
 }
