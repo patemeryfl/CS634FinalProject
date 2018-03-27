@@ -6,7 +6,7 @@ import store from '../state/redux';
 import Footer from './footer';
 
 import Upcoming from '../routes/upcoming';
-import Calendar from '../routes/calendar';
+import CalendarView from '../routes/calendar';
 import Assignments from '../routes/assignments';
 import Courses from '../routes/courses';
 import Profile from '../routes/profile';
@@ -29,7 +29,7 @@ export default class App extends Component {
 				<div id="app">
 					<Router onChange={this.handleRoute}>
 						<Upcoming path="/" />
-						<Calendar path="/calendar" />
+						<CalendarView path="/calendar" />
 						<Assignments path="/assignments" />
 						<Courses path="/courses" />
 						<Profile path="/profile" />

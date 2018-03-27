@@ -11,7 +11,17 @@ class Upcoming extends Component {
 			<div>
 				<Header title="Upcoming" />
 				<div class={style.container}>
-					<p>Assignments</p>
+					{this.props.Assignments.map(assignment => (
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">{assignment.title}</h5>
+								<h6 class="card-subtitle mb-2 text-muted">{assignment.course}</h6>
+								<p class="card-text">Due {assignment.dueDate}</p>
+								<a href="#" class="card-link">Remove</a>
+								<a href="#" class="card-link">Submit</a>
+							</div>
+					  </div>
+					))}
 				</div>
 			</div>
 		);

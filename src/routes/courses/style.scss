@@ -2,10 +2,23 @@
 	padding: 20px 10%;
 	min-height: 100%;
 	width: 100%;
-	.card {
-		margin-bottom: 10px!important;
-	}
+	margin: 56px 0 56px 0;
 	svg {
 		margin-right: 5px;
+	}
+	button {
+		float: right;
+		background-color: transparent;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		padding: 0px;
+		margin:-10px -15px 0 0;
+		svg {
+			fill: #EEE;
+			&:hover {
+				fill: #111;
+			}
+		}
 	}
 }

@@ -13,16 +13,17 @@ class Assignments extends Component {
 			<div>
 				<Header title="Assignments" />
 				<div class={style.container}>
-					<ul>
-						<li>Test</li>
-						{this.props.Assignments.map(assignment => (
-							<li>
-								<h2>{assignment.title}</h2>
-								<h4>{assignment.course}</h4>
-								<p>{assignment.dueDate}</p>
-							</li>
-						))}
-					</ul>
+					{this.props.Assignments.map(assignment => (
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">{assignment.title}</h5>
+								<h6 class="card-subtitle mb-2 text-muted">{assignment.course}</h6>
+								<p class="card-text">Due {assignment.dueDate}</p>
+								<a href="#" class="card-link">Remove</a>
+								<a href="#" class="card-link">Submit</a>
+							</div>
+					  </div>
+					))}
 				</div>
 			</div>
 		);

@@ -4,15 +4,18 @@ export default {
 	Assignments: [
 		{
 			title: 'Final Project',
-		    course: 'CS634'
+			course: 'CS634',
+			dueDate: '05/21/2018'
 		},
 		{
 			title: 'Another Assignment',
-		    course: 'CS656'
+			course: 'CS656',
+			dueDate: '04/21/2018'
 		},
 		{
 			title: 'Another Assignment',
-		    course: 'CS656'
+			course: 'CS656',
+			dueDate: '03/21/2018'
 		}
 	],
 	Courses: [
