@@ -1,17 +1,22 @@
-import upcoming from '../routes/upcoming';
-import calendar from '../routes/calendar';
-import assignments from '../routes/assignments';
-import courses from '../routes/courses';
-import profile from '../routes/profile';
+import Upcoming from '../routes/upcoming/reducer';
+import Calendar from '../routes/calendar/reducer';
+import Assignments from '../routes/assignments/reducer';
+import Courses from '../routes/courses/reducer';
+import Profile from '../routes/profile/reducer';
 
-const initialState = {
-	user: {
-		name: null,
-		school: null
-	},
-	course: [],
-	assignments: []
-};
+//Tests//
+import Pat from '../tests/user/Pat';
+
+// const initial = {
+// 	Upcoming: {},
+// 	Calendar: {},
+// 	Assignments: [],
+// 	Courses: ['hey', 'work'],
+// 	Profile: {
+// 		name: null,
+// 		school: null
+// 	}
+// };
 
 
 const createStore = (reducer, initialState) => {
@@ -44,6 +49,6 @@ const combineReducers = (reducers) => (state , action) => Object.keys(reducers).
 	}, {});
 
 
-const APP = combineReducers({ upcoming, calendar, assignments, courses, profile });
+const APP = combineReducers({ Upcoming, Calendar, Assignments, Courses, Profile });
 
-export default createStore(APP, initialState);
+export default createStore(APP, Pat);

@@ -1,19 +1,20 @@
 import { h, Component } from 'preact';
+import { connect } from 'preact-redux';
+import Header from '../../components/header';
 import style from './style';
 
-export default class Profile extends Component {
-	state = {
-		time: Date.now(),
-		count: 10
-	};
+class Profile extends Component {
+	state = {}
 
-	// Note: `user` comes from the URL, courtesy of our router
-	render({ user }, { time, count }) {
+	render(props, state) {
 		return (
-			<div class={style.container}>
-				<h1>Profile: {user}</h1>
-				<div>Current time: {new Date(time).toLocaleString()}</div>
+			<div>
+				<Header title="Profile" />
+				<div class={style.container}>
+					<h1>Profile: {this.props.Profile.name}</h1>
+				</div>
 			</div>
 		);
 	}
 }
+export default connect(state => state)(Profile);

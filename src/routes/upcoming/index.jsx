@@ -1,15 +1,21 @@
 import { h, Component } from 'preact';
+import { connect } from 'preact-redux';
+import Header from '../../components/header';
 import style from './style';
 
-export default class Upcoming extends Component {
+class Upcoming extends Component {
 	state = {}
 
 	render() {
 		return (
-			<div class={style.container}>
-				<h1>Upcoming Assignments</h1>
-				<p>Assignments</p>
+			<div>
+				<Header title="Upcoming" />
+				<div class={style.container}>
+					<p>Assignments</p>
+				</div>
 			</div>
 		);
 	}
 }
+
+export default connect(state => state)(Upcoming);
