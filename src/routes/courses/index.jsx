@@ -23,13 +23,16 @@ class Courses extends Component {
 			this.setState({ addCourseVisible: !this.state.addCourseVisible });
 		},
 		handleInput: e => {
-			this.setState({ [e.target.name]: e.target.value });
+			const course = this.state.course;
+			course[e.target.id] = e.target.value;
+			this.setState({ course });
 		},
 		addCourse: () => {
-			this.props.dispatch({ type: 'ADD COURSE', data: this.state.course });
+			this.props.dispatch({ type: 'ADD_COURSE', data: this.state.course });
+			this.actions.showAddCourse();
 		},
 		removeCourse: (number) => {
-			this.props.dispatch({ type: 'REMOVE COURSE', data: number.id });
+			this.props.dispatch({ type: 'REMOVE_COURSE', data: number });
 		}
 	}
 	render(props, state) {
@@ -37,7 +40,7 @@ class Courses extends Component {
 			return (
 				<AddCourse
 					toggleView={this.actions.showAddCourse}
-					handleInput={this.actions.handleInput}
+					handleChange={this.actions.handleInput}
 					handleSubmit={this.actions.addCourse}
 					courses={this.props.Courses}
 				/>);

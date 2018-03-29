@@ -4,11 +4,9 @@ const REMOVE_COURSE = 'REMOVE_COURSE';
 const Courses = (state, action) => {
 	switch (action.type) {
 		case ADD_COURSE:
-			console.log(action.data, 'added');
-			return state;
+			return [...state, action.data];
 		case REMOVE_COURSE:
-			console.log(action.data, 'removed');
-			return state;
+			return state.filter(item => item.number !== action.data );
 		default:
 			return state;
 	}

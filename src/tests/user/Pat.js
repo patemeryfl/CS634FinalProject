@@ -5,29 +5,38 @@ export default {
 		{
 			title: 'Final Project',
 			course: 'CS634',
-			dueDate: '05/21/2018'
+			dueDate: '05/21/2018',
+			submitted: false
 		},
 		{
 			title: 'Another Assignment',
 			course: 'CS656',
-			dueDate: '04/21/2018'
+			dueDate: '04/21/2018',
+			submitted: true
 		},
 		{
 			title: 'Another Assignment',
 			course: 'CS656',
-			dueDate: '03/21/2018'
+			dueDate: '03/21/2018',
+			submitted: false
 		}
 	],
 	Courses: [
 		{
-			name: 'CS634',
+			name: 'Agile Software Developement',
 			teacher: 'Kanabar',
-			color: '#B71C1C'
+			color: '#B71C1C',
+			email: 'kanabar@bu.edu',
+			number: 'CS634',
+			notes: null
 		},
 		{
-			name: 'CS622',
+			name: 'Data Structures and Algorithms',
 			teacher: 'Lee',
-			color: '#4CAF50'
+			color: '#4CAF50',
+			email: 'jlee@bu.edu',
+			number: 'CS622',
+			notes: null
 		}
 	],
 	Profile: {
