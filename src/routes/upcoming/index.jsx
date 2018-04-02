@@ -1,12 +1,51 @@
 import { h, Component } from 'preact';
 import { connect } from 'preact-redux';
 import Header from '../../components/header';
+import SignIn from '../../components/sign-in';
 import style from './style';
+import users from '../../tests/users';
 
 class Upcoming extends Component {
-	state = {}
-
+	state = {
+		login: {
+			email: null,
+			password: null
+		},
+		signedIn: false
+	}
+	actions = {
+		validateUser: (credentials) => {
+			let user = users.filter((item) => item.Profile.email === credentials.email);
+			if (user) {
+				if (user[0].Profile.password === credentials.password) {
+					return user[0];
+				}
+				return 'Incorrect Password';
+			}
+			return 'Cant find that email';
+		},
+		handleChange: e => {
+			const login = this.state.login;
+			login[e.target.id] =  e.target.value;
+			this.setState({ login });
+		},
+		handleSubmit: () => {
+			//This is an anti-pattern
+			const user = this.actions.validateUser(this.state.login);
+			this.context.store.setState(user);
+			this.setState({ signedIn: true });
+		}
+	}
 	render() {
+		if (!this.props.Profile.signedIn) {
+			return (
+				<SignIn
+					signedIn={this.state.signedIn}
+					handleSubmit={this.actions.handleSubmit}
+					handleChange={this.actions.handleChange}
+				/>
+			);
+		}
 		return (
 			<div>
 				<Header title="Upcoming" />

@@ -40,7 +40,10 @@ export default {
 		}
 	],
 	Profile: {
+		email: 'pat@gmail.com',
+		password: 'password',
 		name: 'Pat Emery',
-		school: 'Boston University'
+		school: 'Boston University',
+		signedIn: true
 	}
 };

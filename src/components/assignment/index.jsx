@@ -2,7 +2,7 @@
 import { h } from 'preact';
 
 const Assignment = (props) => {
-	const { id, title, course, dueDate, submitted } = props.data;
+	const { title, course, dueDate, submitted } = props.data;
 	let status = `Due ${dueDate}`;
 	if (submitted) status = 'Submitted';
 	return (

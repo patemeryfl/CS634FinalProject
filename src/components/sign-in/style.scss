@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+.container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 20% 10%;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background-color: #673AB7;
+    form {
+        input {
+            margin-bottom: 10px;
+        }
+        .actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            button {
+                height: 50px;
+                width: 48%;
+                border-radius: 5px;
+                background-color: cornflowerblue;
+                border: none;
+                color: white;
+                cursor: pointer;
+                &:hover {
+                    transition: all 0.25s ease-in-out;
+                    background-color: rgba(0,0,0,0.2);
+                }
+            }
+        }
+    }
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 75px;
+    color: white;
+    text-align: center;
+}
+
+.signin {
+    -webkit-animation-name: signin; 
+    -webkit-animation-duration: .5s;
+    animation-name: signin;
+    animation-duration: .5s;
+    position: absolute;
+    top: -1000px;
+    left: 0px;
+    padding: 20% 10%;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background-color: #673AB7;
+    form {
+        input {
+            margin-bottom: 10px;
+        }
+        .actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            button {
+                height: 50px;
+                width: 48%;
+                border-radius: 5px;
+                background-color: cornflowerblue;
+                border: none;
+                color: white;
+                cursor: pointer;
+                &:hover {
+                    transition: all 0.25s ease-in-out;
+                    background-color: rgba(0,0,0,0.2);
+                }
+            }
+        }
+    }
+}
+
+@keyframes signin {
+    0%   { left:0px; top:0px;}
+    100% { left:0px; top:-1000px;}
+}

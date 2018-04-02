@@ -5,18 +5,17 @@ import Courses from '../routes/courses/reducer';
 import Profile from '../routes/profile/reducer';
 
 //Tests//
-import Pat from '../tests/user/Pat';
+//import Pat from '../tests/user/Pat';
 
-// const initial = {
-// 	Upcoming: {},
-// 	Calendar: {},
-// 	Assignments: [],
-// 	Courses: ['hey', 'work'],
-// 	Profile: {
-// 		name: null,
-// 		school: null
-// 	}
-// };
+const initial = {
+	Profile: {
+		signedIn: false
+	},
+	Upcoming: [],
+	Calendar: [],
+	Assignments: [],
+	Courses: []
+};
 
 
 const createStore = (reducer, initialState) => {
@@ -24,6 +23,7 @@ const createStore = (reducer, initialState) => {
 	let listeners = [];
 		
 	const getState = () => state;
+	const setState = (newState) => state = newState;
 	
 	const dispatch = (action) => {
 		state = reducer(state, action);
@@ -36,9 +36,9 @@ const createStore = (reducer, initialState) => {
 			listeners.filter(l => l !== listener);
 		};
 	};
-	dispatch({});
+	dispatch({ });
 	
-	return { getState, dispatch, subscribe };
+	return { getState, setState, dispatch, subscribe };
 };
 
 const combineReducers = (reducers) => (state , action) => Object.keys(reducers).reduce(
@@ -49,6 +49,6 @@ const combineReducers = (reducers) => (state , action) => Object.keys(reducers).
 	}, {});
 
 
-const APP = combineReducers({ Upcoming, Calendar, Assignments, Courses, Profile });
+const APP = combineReducers({ Profile, Upcoming, Calendar, Assignments, Courses });
 
-export default createStore(APP, Pat);
+export default createStore(APP, initial);
