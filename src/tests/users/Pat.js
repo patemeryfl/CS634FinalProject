@@ -5,18 +5,21 @@ export default {
 		{
 			title: 'Final Project',
 			course: 'CS634',
+			color: '#B71C1C',
 			dueDate: '05/21/2018',
 			submitted: false
 		},
 		{
 			title: 'Another Assignment',
 			course: 'CS656',
+			color: '#B71C1C',
 			dueDate: '04/21/2018',
 			submitted: true
 		},
 		{
 			title: 'Another Assignment',
 			course: 'CS656',
+			color: '#4CAF50',
 			dueDate: '03/21/2018',
 			submitted: false
 		}

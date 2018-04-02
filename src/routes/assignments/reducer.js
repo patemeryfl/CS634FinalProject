@@ -13,8 +13,8 @@ const Assignment = (state, action) => {
 				...state.slice(action.data + 1)
 			];
 		case SUBMIT_ASSIGNMENT:
-			return state.map(item => {
-				if (item.id === action.data) item.submitted = !item.submitted;
+			return state.map((item, idx) => {
+				if (idx === action.data) item.submitted = !item.submitted;
 				return item;
 			});
 		default:

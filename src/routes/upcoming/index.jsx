@@ -10,8 +10,7 @@ class Upcoming extends Component {
 		login: {
 			email: null,
 			password: null
-		},
-		signedIn: false
+		}
 	}
 	actions = {
 		validateUser: (credentials) => {
@@ -33,14 +32,14 @@ class Upcoming extends Component {
 			//This is an anti-pattern
 			const user = this.actions.validateUser(this.state.login);
 			this.context.store.setState(user);
-			this.setState({ signedIn: true });
+			this.props.dispatch({ type: 'SIGN_IN' });
 		}
 	}
 	render() {
 		if (!this.props.Profile.signedIn) {
 			return (
 				<SignIn
-					signedIn={this.state.signedIn}
+					signedIn={this.props.Profile.signedIn}
 					handleSubmit={this.actions.handleSubmit}
 					handleChange={this.actions.handleChange}
 				/>
@@ -50,17 +49,26 @@ class Upcoming extends Component {
 			<div>
 				<Header title="Upcoming" />
 				<div class={style.container}>
-					{this.props.Assignments.map(assignment => (
-						<div class="card">
+					{this.props.Assignments.map(assignment => {
+						let due = assignment.submitted ? 'Submitted' : `Due ${assignment.dueDate}`;
+						if (assignment === null) {
+							return <div><h3>You have no upcoming assignments!</h3><h4>Hooray!</h4></div>;
+						}
+						return (<div class="card">
 							<div class="card-body">
-								<h5 class="card-title">{assignment.title}</h5>
-								<h6 class="card-subtitle mb-2 text-muted">{assignment.course}</h6>
-								<p class="card-text">Due {assignment.dueDate}</p>
-								<a href="#" class="card-link">Remove</a>
-								<a href="#" class="card-link">Submit</a>
+								<article>
+									<div>
+										<h5 class="card-title">{assignment.title}</h5>
+										<h6 class="card-subtitle mb-2 text-muted">{assignment.course}</h6>
+										<p class="card-text">{due}</p>
+									</div>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+										<circle cx="12" cy="12" r="12" fill={assignment.color} />
+									</svg>
+								</article>
 							</div>
-					  </div>
-					))}
+					  </div>);
+					})}
 				</div>
 			</div>
 		);

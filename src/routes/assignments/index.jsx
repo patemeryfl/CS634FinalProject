@@ -56,11 +56,13 @@ class Assignments extends Component {
 			<div>
 				<Header title="Assignments" handleClick={this.actions.toggleAddAssignment} />
 				<div class={style.container}>
-					<div class="btn-group" role="group">
-						<button type="button" class="btn btn-secondary" onClick={() => this.actions.changeFilter('ALL')}>All</button>
-						<button type="button" class="btn btn-secondary" onClick={() => this.actions.changeFilter('NOT-SUBMITTED')}>Not Submitted</button>
-						<button type="button" class="btn btn-secondary" onClick={() => this.actions.changeFilter('SUBMITTED')}>Submitted</button>
-					</div>
+					<span>
+						<div class="btn-group" role="group">
+							<button type="button" class="btn btn-secondary" onClick={() => this.actions.changeFilter('ALL')}>All</button>
+							<button type="button" class="btn btn-secondary" onClick={() => this.actions.changeFilter('NOT-SUBMITTED')}>Not Submitted</button>
+							<button type="button" class="btn btn-secondary" onClick={() => this.actions.changeFilter('SUBMITTED')}>Submitted</button>
+						</div>
+					</span>
 					{this.props.Assignments.map((assignment, index) => {
 						switch (this.state.filter) {
 							case 'ALL':
