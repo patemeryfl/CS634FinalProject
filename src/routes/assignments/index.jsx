@@ -22,6 +22,7 @@ class Assignments extends Component {
 			this.setState({ addAssignmentVisible: !this.state.addAssignmentVisible });
 		},
 		handleInput: e => {
+			debugger;
 			const assignment = this.state.assignment;
 			assignment[e.target.id] = e.target.value;
 			this.setState({ assignment });

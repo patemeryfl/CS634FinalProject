@@ -20,7 +20,13 @@ if (module.hot) {
 export default class App extends Component {
 
 	handleRoute = e => {
-		this.currentUrl = e.url;
+		let state = e.router.context.store.getState();
+		if (state.Profile.signedIn) {
+			this.currentUrl = e.url;
+		}
+		else {
+			this.currentUrl = '/';
+		}
 	};
 
 	render() {
