@@ -46,6 +46,7 @@ export default {
 		email: 'pat@gmail.com',
 		password: 'password',
 		name: 'Pat Emery',
+		image: false,
 		school: 'Boston University',
 		signedIn: true
 	}

@@ -1,6 +1,46 @@
 .container {
-	padding: 0px 20px;
 	min-height: 100%;
 	width: 100%;
 	margin: 56px 0 56px 0;
+
+	.top {
+		text-align: center;
+		height: 250px;
+		width: 100%;
+		padding-top: 20px;
+		background-color: #673AB7;
+		img {
+			max-width: 100px;
+			max-height: 100px;
+		}
+		svg {
+			path {
+				fill: white;
+			}
+		}
+		h2 {
+			color: white;
+			font-size: 1.5rem;
+		}
+		h3 {
+			color: white;
+			font-size: 1rem;
+		}
+	}
+	.actions {
+		h2 {
+			background-color: #CCC;
+			font-size: 1.2rem;
+			height: 50px;
+			width: 100%;
+			padding: 12px;
+		}
+		li {
+			&:hover {
+				background-color: #CCC;
+				cursor: pointer;
+			}
+		}
+	}
 }
+

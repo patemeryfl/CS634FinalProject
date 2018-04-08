@@ -11,6 +11,7 @@ const SignUp = (props) => (
 		/>
 		<input type="password" id="password" class="form-control" placeholder="Password" required onChange={props.handleChange} />
 		<div class={style.actions}>
+            <button onClick={props.cancel}>Cancel</button>
 			<button onClick={props.signUp}>Sign Up</button>
 		</div>
 		<div>

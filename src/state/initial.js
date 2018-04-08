@@ -4,6 +4,7 @@ const initial = {
 		school: "",
 		email: "",
 		password: "",
+		image: false,
 		signedIn: false,
 	},
 	Account: {

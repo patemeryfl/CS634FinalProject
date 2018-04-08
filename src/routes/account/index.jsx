@@ -70,7 +70,8 @@ class Account extends Component {
 			} else {
 				this.setState({ errors: 'That email account already exists. Is it yours? Click here to reset your password.' })
 			}
-		}
+        },
+        
 	}
 
 	componentWillMount() {
@@ -84,7 +85,7 @@ class Account extends Component {
             return (
                 <SignUp
                 handleChange={this.actions.handleSignUpChange}
-                signIn={this.actions.signIn}
+                cancel={() => this.setState({ signUp: false })}
                 signUp={this.actions.signUp}
                 errors={this.state.errors}
             />
