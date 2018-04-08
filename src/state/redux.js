@@ -3,20 +3,8 @@ import Calendar from '../routes/calendar/reducer';
 import Assignments from '../routes/assignments/reducer';
 import Courses from '../routes/courses/reducer';
 import Profile from '../routes/profile/reducer';
-
-//Tests//
-//import Pat from '../tests/user/Pat';
-
-const initial = {
-	Profile: {
-		signedIn: false
-	},
-	Upcoming: [],
-	Calendar: [],
-	Assignments: [],
-	Courses: []
-};
-
+import Account from '../routes/account/reducer';
+import initial from './initial';
 
 const createStore = (reducer, initialState) => {
 	let state = initialState;
@@ -49,6 +37,6 @@ const combineReducers = (reducers) => (state , action) => Object.keys(reducers).
 	}, {});
 
 
-const APP = combineReducers({ Profile, Upcoming, Calendar, Assignments, Courses });
+const APP = combineReducers({ Account, Profile, Upcoming, Calendar, Assignments, Courses });
 
 export default createStore(APP, initial);

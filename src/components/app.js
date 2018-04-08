@@ -20,13 +20,7 @@ if (module.hot) {
 export default class App extends Component {
 
 	handleRoute = e => {
-		let state = e.router.context.store.getState();
-		if (state.Profile.signedIn) {
-			this.currentUrl = e.url;
-		}
-		else {
-			this.currentUrl = '/';
-		}
+		this.currentUrl = e.url;
 	};
 
 	render() {
@@ -38,7 +32,7 @@ export default class App extends Component {
 						<CalendarView path="/calendar" />
 						<Assignments path="/assignments" />
 						<Courses path="/courses" />
-						<Profile path="/profile" />
+						<Profile path="/profile" to="/"/>
 					</Router>
 					<Footer />
 				</div>

@@ -1,14 +1,17 @@
-/* eslint no-case-declarations: 0 */
-const SIGN_IN = 'SIGN_IN';
-const SIGN_OUT = 'SIGN_OUT';
-
+const CHANGE_NAME = 'CHANGE_NAME';
+const CHANGE_PASSWORD = 'CHANGE_PASSWORD';
+const CHANGE_SCHOOL = 'CHANGE_SCHOOL';
+const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
 
 const Profile = (state, action) => {
 	switch (action.type) {
-		case SIGN_IN:
+		case CHANGE_NAME:
 			return state;
-		case SIGN_OUT:
-			console.log(action.data, 'signed out');
+		case CHANGE_PASSWORD:
+			return state;
+		case CHANGE_SCHOOL:
+			return state;
+		case DELETE_ACCOUNT:
 			return state;
 		default:
 			return state;

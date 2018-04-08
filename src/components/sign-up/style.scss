@@ -41,12 +41,13 @@
     font-size: 5em;
     color: white;
     text-align: center;
+    padding-bottom: 30px;
 }
 
-.signin {
-    -webkit-animation-name: signin; 
+.signup {
+    -webkit-animation-name: signup; 
     -webkit-animation-duration: .5s;
-    animation-name: signin;
+    animation-name: signup;
     animation-duration: .5s;
     position: absolute;
     top: -1000px;
@@ -83,7 +84,7 @@
     }
 }
 
-@keyframes signin {
+@keyframes signup {
     0%   { left:0px; top:0px;}
     100% { left:0px; top:-1000px;}
 }
