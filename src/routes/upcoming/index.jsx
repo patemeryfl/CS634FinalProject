@@ -7,10 +7,12 @@ import users from '../../tests/users';
 
 class Upcoming extends Component {
 	state = {
-
+		showDetails: false
 	}
 	actions = {
-
+		showDetails: () => {
+			this.setState({ showDetails: !this.state.showDetails })
+		}
 	}
 
 	render() {
@@ -24,7 +26,8 @@ class Upcoming extends Component {
 						if (assignment === null) {
 							return <div><h3>You have no upcoming assignments!</h3><h4>Hooray!</h4></div>;
 						}
-						return (<div class="card">
+						return (
+						<div class="card" onClick={this.actions.showDetails}>
 							<div class="card-body">
 								<article>
 									<div>

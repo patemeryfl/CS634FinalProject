@@ -10,15 +10,15 @@ export default {
 			submitted: false
 		},
 		{
-			title: 'Another Assignment',
-			course: 'CS656',
+			title: 'Priority Scheduling',
+			course: 'CS622',
 			color: '#B71C1C',
 			dueDate: '04/21/2018',
 			submitted: true
 		},
 		{
-			title: 'Another Assignment',
-			course: 'CS656',
+			title: 'Hueristic Algorithms',
+			course: 'CS622',
 			color: '#4CAF50',
 			dueDate: '03/21/2018',
 			submitted: false

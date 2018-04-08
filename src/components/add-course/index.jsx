@@ -21,7 +21,7 @@ const AddCourse = (props) => (
 				</button>
 			</nav>
 		</header>
-		<form onSubmit={props.handleSubmit} action="javascript:">
+		<article>
 			<div class="form-group row">
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="number" placeholder="Course Number" onChange={props.handleChange} />
@@ -53,8 +53,8 @@ const AddCourse = (props) => (
 					<button onClick={props.handleChange} id="color" value={color} style={{ backgroundColor: color }} />
 				))}
 			</footer><br />
-			<button type="submit" class="btn btn-primary">Done</button>
-		</form>
+			<button onClick={props.handleSubmit} class="btn btn-primary">Done</button>
+		</article>
 	</div>
 );
 

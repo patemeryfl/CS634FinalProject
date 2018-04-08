@@ -62,7 +62,7 @@ class Account extends Component {
 			this.props.dispatch({ type: 'SIGN_IN' });
 		},
 		signUp: () => {
-			if(this.actions.checkForExisting(this.state.login)) {
+			if(this.actions.checkForExisting(this.state.newAccount)) {
                 const signupDetails = this.state.newAccount;
                 const newUser = {...initial, Profile: signupDetails } 
 				this.context.store.setState(newUser); 
@@ -78,14 +78,14 @@ class Account extends Component {
 		const login = this.state.login;
 		login.email = "";
 		login.password = "";
-		this.setState({ login })
+        this.setState({ login });
 	}
 	render() {
         if(this.state.signUp) {
             return (
                 <SignUp
                 handleChange={this.actions.handleSignUpChange}
-                cancel={() => this.setState({ signUp: false })}
+                cancel={() => this.setState({ signUp: false, errors: "" })}
                 signUp={this.actions.signUp}
                 errors={this.state.errors}
             />
@@ -95,7 +95,7 @@ class Account extends Component {
             <SignIn
                 handleChange={this.actions.handleSignInChange}
                 signIn={this.actions.signIn}
-                signUp={() => this.setState({ signUp: true })}
+                signUp={() => this.setState({ signUp: true, errors: "" })}
                 errors={this.state.errors}
             />
         )

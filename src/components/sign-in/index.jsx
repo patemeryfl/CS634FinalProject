@@ -15,7 +15,7 @@ const SignIn = (props) => (
 			<button onClick={props.signUp}>Sign Up</button>
 			<button onClick={props.signIn}>Sign In</button>
 		</div>
-		<div>
+		<div class='alert'>
 			<p>{props.errors}</p>
 		</div>
 	</div>

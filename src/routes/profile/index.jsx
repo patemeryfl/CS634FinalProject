@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 import { connect } from 'preact-redux';
 import { route } from 'preact-router';
+import { Link } from 'preact-router/match';
 import Header from '../../components/header';
 import initial from '../../state/initial';
 import icons from '../../assets/svgs';
@@ -30,7 +31,21 @@ class Profile extends Component {
 		} 
 		return (
 			<div>
-				<Header title="Profile" handleClick={this.actions.signOut}/>
+				<header class={style.header}>
+					<nav>
+						<Link href="/profile">
+							<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
+								<path d={icons.profile} />
+							</svg>
+						</Link>
+						<h2>{props.title}</h2>
+						<button onClick={this.actions.signOut}>
+							<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
+								<path d={icons.signout} />
+							</svg>
+						</button>
+					</nav>
+				</header>
 				<div class={style.container}>
 					<div class={style.top}>
 						{image}

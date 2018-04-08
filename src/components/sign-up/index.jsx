@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import style from './style';
 
+
 const SignUp = (props) => (
 	<div class={style.container}>
 		<h2 class={style.title}>Sign Up</h2>
@@ -14,9 +15,11 @@ const SignUp = (props) => (
             <button onClick={props.cancel}>Cancel</button>
 			<button onClick={props.signUp}>Sign Up</button>
 		</div>
-		<div>
-			<p>{props.errors}</p>
-		</div>
+        {props.errors ? 
+            <div class='alert alert-warning'>
+                <p>{props.errors}</p>
+            </div> : <div />
+        }
 	</div>
 );
 

@@ -63,9 +63,13 @@ class Courses extends Component {
 										</svg>
 									</button>
 								</h5>
-								<h6 class="card-subtitle mb-2 text-muted">{course.teacher}</h6>
+								<h6 class="card-subtitle mb-2 text-muted">{course.teacher}</h6>	
 								<p class="card-text">
-									{this.props.Assignments.map(assignment => (assignment.title))}
+								{this.props.Assignments.map(assignment => {
+									if(assignment.course === course.number) {
+										return (<div> - {assignment.title}<br /></div>);
+									}
+								}) }
 								</p>
 							</div>
 						</div>
