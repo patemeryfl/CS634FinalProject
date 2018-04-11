@@ -45,7 +45,8 @@ export default {
 	Profile: {
 		email: 'pat@gmail.com',
 		password: 'password',
-		name: 'Pat Emery',
+		first: 'Pat',
+		last: 'Emery',
 		image: false,
 		school: 'Boston University',
 		signedIn: true

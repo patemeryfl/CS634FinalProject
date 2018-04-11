@@ -21,6 +21,11 @@ class Profile extends Component {
 			this.context.store.setState(initial);
 			this.props.dispatch({ type: "SIGN_OUT" });
 			route(this.props.to, true);
+		},
+		deleteAccount: () => { //Same as signing out, resets global to initial state
+			this.context.store.setState(initial);
+			this.props.dispatch({ type: "SIGN_OUT" });
+			route(this.props.to, true);
 		}
 	}
 
@@ -49,16 +54,15 @@ class Profile extends Component {
 				<div class={style.container}>
 					<div class={style.top}>
 						{image}
-						<h2>{this.props.Profile.name}</h2>
+						<h2>{this.props.Profile.first} {this.props.Profile.last}</h2>
 						<h3>{this.props.Profile.school}</h3>
 					</div>
 					<div class={style.actions}>
 						<h2>Change Your Profile</h2>
 						<ul class="list-group">
-							<li class="list-group-item"><span>Upload Photo</span></li>
 							<li class="list-group-item"><span>Change Password</span></li>
 							<li class="list-group-item"><span>Change School</span></li>
-							<li class="list-group-item"><span>Delete Account</span></li>
+							<li class="list-group-item" onClick={this.actions.deleteAccount}><span>Delete Account</span></li>
 						</ul>
 					</div>
 				</div>

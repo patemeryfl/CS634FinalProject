@@ -1,6 +1,7 @@
 const initial = {
 	Profile: {
-		name: "",
+		first: "",
+		last: "",
 		school: "",
 		email: "",
 		password: "",

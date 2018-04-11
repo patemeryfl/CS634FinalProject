@@ -7,14 +7,17 @@ import Assignment from '../../components/assignment';
 import style from './style';
 
 class Assignments extends Component {
+	initial = {
+		title: "Assignment Title",
+		notes: "Notes",
+		course: null,
+		dueDate: null,
+		submitted: false
+	};
+
 	state = {
 		addAssignmentVisible: false,
-		assignment: {
-			title: null,
-			course: null,
-			dueDate: null,
-			submitted: false
-		},
+		assignment: this.initial,
 		filter: 'ALL'
 	}
 	actions = {
@@ -28,6 +31,7 @@ class Assignments extends Component {
 		},
 		addAssignment: () => {
 			this.props.dispatch({ type: 'ADD_ASSIGNMENT', data: this.state.assignment });
+			this.setState({ assignment: this.initial });
 			this.actions.toggleAddAssignment();
 		},
 		removeAssigment: (number) => {
@@ -45,6 +49,7 @@ class Assignments extends Component {
 		if (this.state.addAssignmentVisible) {
 			return (
 				<AddAssignment
+					state={this.state}
 					toggleView={this.actions.toggleAddAssignment}
 					handleSubmit={this.actions.addAssignment}
 					handleChange={this.actions.handleInput}

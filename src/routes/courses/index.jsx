@@ -33,6 +33,7 @@ class Courses extends Component {
 		},
 		removeCourse: (number) => {
 			this.props.dispatch({ type: 'REMOVE_COURSE', data: number });
+			this.props.dispatch({ type: 'REMOVE_COURSE_ASSIGNMENTS', data: number });
 		}
 	}
 	render(props, state) {

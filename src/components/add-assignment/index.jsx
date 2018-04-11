@@ -29,10 +29,10 @@ const AddAssignment = (props) => (
 				</select>
 			</div>
 			<div class="form-group">
-				<input type="text" class="form-control" id="title" placeholder="Assignment Title" onChange={props.handleChange} />
+				<input type="text" class="form-control" id="title" placeholder={props.state.assignment.title} onChange={props.handleChange} />
 			</div>
 			<div class="form-group">
-				<textarea class="form-control" id="notes" rows="3" placeholder="Notes" onChange={props.handleChange} />
+				<textarea class="form-control" id="notes" rows="3" placeholder={props.state.assignment.notes} onChange={props.handleChange} />
 			</div>
 			Date Picker<br />
 			DatePicket<br />

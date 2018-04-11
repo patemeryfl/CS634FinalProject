@@ -13,17 +13,18 @@ class Account extends Component {
 	state = {
         signUp: false,
 		login: {
-			email: null,
-			password: null
+			email: '',
+			password:''
         },
         newAccount: {
-            name: "",
-            school: "",
-            email: null,
-            password: null,
+			first: '',
+			last: '',
+            school: '',
+            email: '',
+            password: '',
             signedIn: true
         },
-		errors: null
+		errors: false
 	}
 	actions = {
 		validateUser: (credentials) => {
@@ -57,18 +58,30 @@ class Account extends Component {
 		},
 		signIn: () => {
 			//This is an anti-pattern
-			const user = this.actions.validateUser(this.state.login);
-			this.context.store.setState(user);
-			this.props.dispatch({ type: 'SIGN_IN' });
+			if(this.state.login.email === '' || this.state.login.password === '') { 
+				this.setState({ errors: "Email or Password is missing." })
+			} else {
+				const user = this.actions.validateUser(this.state.login);
+				this.context.store.setState(user);
+				this.props.dispatch({ type: 'SIGN_IN' });
+			}
 		},
 		signUp: () => {
-			if(this.actions.checkForExisting(this.state.newAccount)) {
-                const signupDetails = this.state.newAccount;
-                const newUser = {...initial, Profile: signupDetails } 
-				this.context.store.setState(newUser); 
-				this.props.dispatch({ type: 'SIGN_UP' });
+			const acc = this.state.newAccount;
+			if( acc.first === '' || 
+				acc.last === '' || 
+				acc.email === '' || 
+			    acc.password === '') { 
+				this.setState({ errors: "Please fill out all fields." })
 			} else {
-				this.setState({ errors: 'That email account already exists. Is it yours? Click here to reset your password.' })
+				if(this.actions.checkForExisting(this.state.newAccount)) {
+					const signupDetails = this.state.newAccount;
+					const newUser = {...initial, Profile: signupDetails } 
+					this.context.store.setState(newUser); 
+					this.props.dispatch({ type: 'SIGN_UP' });
+				} else {
+					this.setState({ errors: 'That email account already exists. Is it yours? Click here to reset your password.' })
+				}
 			}
         },
         
@@ -84,11 +97,11 @@ class Account extends Component {
         if(this.state.signUp) {
             return (
                 <SignUp
-                handleChange={this.actions.handleSignUpChange}
-                cancel={() => this.setState({ signUp: false, errors: "" })}
-                signUp={this.actions.signUp}
-                errors={this.state.errors}
-            />
+					handleChange={this.actions.handleSignUpChange}
+					cancel={() => this.setState({ signUp: false, errors: "" })}
+					signUp={this.actions.signUp}
+					errors={this.state.errors}
+				/>
             )
         }
         return (

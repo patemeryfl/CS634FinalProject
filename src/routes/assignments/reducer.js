@@ -1,6 +1,7 @@
 /* eslint no-case-declarations: 0 */
 const ADD_ASSIGNMENT = 'ADD_ASSIGNMENT';
 const REMOVE_ASSIGNMENT = 'REMOVE_ASSIGNMENT';
+const REMOVE_COURSE_ASSIGNMENTS = 'REMOVE_COURSE_ASSIGNMENTS';
 const SUBMIT_ASSIGNMENT = 'SUBMIT_ASSIGNMENT';
 
 const Assignment = (state, action) => {
@@ -17,6 +18,8 @@ const Assignment = (state, action) => {
 				if (idx === action.data) item.submitted = !item.submitted;
 				return item;
 			});
+		case REMOVE_COURSE_ASSIGNMENTS:
+			return state.filter(assignment => assignment.course !== action.data);
 		default:
 			return state;
 	}
