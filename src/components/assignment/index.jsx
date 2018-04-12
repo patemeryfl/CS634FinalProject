@@ -13,7 +13,9 @@ const Assignment = (props) => {
 				<p class="card-text">{status}</p>
 				<footer>
 					<button class="btn btn-danger" onClick={() => props.actions.removeAssigment(props.index)}>Remove</button>
+					{status !== 'Submitted' ? 
 					<button class="btn btn-success" onClick={() => props.actions.submitAssigment(props.index)}>Submit</button>
+					: <div />}
 				</footer>
 			</div>
 		</div>

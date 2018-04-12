@@ -18,7 +18,7 @@ class Assignments extends Component {
 	state = {
 		addAssignmentVisible: false,
 		assignment: this.initial,
-		filter: 'ALL'
+		filter: 'NOT-SUBMITTED'
 	}
 	actions = {
 		toggleAddAssignment: () => {
