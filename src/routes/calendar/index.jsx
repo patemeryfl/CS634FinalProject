@@ -6,34 +6,10 @@ import Header from '../../components/header';
 import style from './style';
 
 class CalendarView extends Component {
-	state = {
-		assignments: [
-			{
-				title: 'Final Project',
-				course: 'CS634',
-				color: '#B71C1C',
-				dueDate: 20,
-				submitted: false
-			},
-			{
-				title: 'Priority Scheduling',
-				course: 'CS622',
-				color: '#B71C1C',
-				dueDate: 18,
-				submitted: true
-			},
-			{
-				title: 'Hueristic Algorithms',
-				course: 'CS622',
-				color: '#4CAF50',
-				dueDate: 20,
-				submitted: false
-			}
-		]
-	}
+	state = { }
 	actions = {
-		onClickDay: (value) => {
-			console.log(value, 'was clicked');
+		onClickDay: (date) => {
+			console.log(date.getDate(), date.getMonth(),  'was clicked');
 		}
 	}
 
@@ -46,9 +22,10 @@ class CalendarView extends Component {
 						<Calendar
 							onClickDay={this.actions.onClickDay}
 							tileContent={
-								({ date, view }) =>
-									this.state.assignments.map(assign =>
-										date.getDate() === assign.dueDate ?
+								({ date }) =>
+									this.props.Assignments.map(assign =>
+										date.getMonth() === assign.dueDate.split('/')[0].charAt(1) - 1
+										&& date.getDay() === assign.dueDate.split('/')[0].charAt(1) ?
 											<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 24 24">
 												<circle cx="12" cy="12" r="12" fill={assign.color} />
 											</svg> : null

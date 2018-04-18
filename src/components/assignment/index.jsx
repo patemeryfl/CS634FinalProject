@@ -16,7 +16,7 @@ class Assignment extends Component {
 	}
 
 	render(props) {
-		const { title, course, dueDate, submitted, color, showButtons } = props.data;
+		const { title, course, dueDate, submitted, color } = props.data;
 		let status = `Due ${dueDate}`;
 		if (submitted) status = 'Submitted';
 		return (
@@ -34,7 +34,7 @@ class Assignment extends Component {
 								<circle cx="12" cy="12" r="12" fill={color} />
 							</svg>
 						</article>
-						{showButtons ?
+						{props.showButtons ?
 							<footer>
 								<button class="btn btn-danger" onClick={() => props.actions.removeAssigment(props.index)}>Remove</button>
 								{status !== 'Submitted' ?

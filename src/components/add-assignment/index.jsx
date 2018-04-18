@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import DatePicker from 'react-toolbox/lib/date_picker';
 import style from './style';
 import icons from '../../assets/svgs';
 
@@ -34,8 +35,7 @@ const AddAssignment = (props) => (
 			<div class="form-group">
 				<textarea class="form-control" id="notes" rows="3" placeholder={props.state.assignment.notes} onChange={props.handleChange} />
 			</div>
-			Date Picker<br />
-			DatePicket<br />
+			<DatePicker getValue={console.log('works?')} />
 			<button type="submit" class="btn btn-primary">Done</button>
 		</form>
 	</div>

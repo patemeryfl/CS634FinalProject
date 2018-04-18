@@ -71,12 +71,12 @@ class Assignments extends Component {
 					{this.props.Assignments.map((assignment, index) => {
 						switch (this.state.filter) {
 							case 'ALL':
-								return <Assignment actions={this.actions} data={assignment} index={index} />;
+								return <Assignment actions={this.actions} data={assignment} index={index} showButtons />;
 							case 'NOT-SUBMITTED':
-								if (assignment.submitted === false) return (<Assignment actions={this.actions} data={assignment} index={index} />);
+								if (assignment.submitted === false) return (<Assignment actions={this.actions} data={assignment} index={index} showButtons />);
 								break;
 							case 'SUBMITTED':
-								if (assignment.submitted === true) return (<Assignment actions={this.actions} data={assignment} index={index} />);
+								if (assignment.submitted === true) return (<Assignment actions={this.actions} data={assignment} index={index} showButtons />);
 								break;
 							default:
 								return (<div>No Assignment Added</div>);
