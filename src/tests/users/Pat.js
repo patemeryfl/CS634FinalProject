@@ -49,6 +49,7 @@ export default {
 		last: 'Emery',
 		image: false,
 		school: 'Boston University',
-		signedIn: true
+		signedIn: true,
+		points: 0
 	}
 };

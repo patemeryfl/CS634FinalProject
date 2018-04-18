@@ -33,7 +33,7 @@ class Profile extends Component {
 		let image = <Default />
 		if(this.props.Profile.image) {
 			image = `<img src="" />`;
-		} 
+		}
 		return (
 			<div>
 				<header class={style.header}>
@@ -54,7 +54,7 @@ class Profile extends Component {
 				<div class={style.container}>
 					<div class={style.top}>
 						{image}
-						<h2>{this.props.Profile.first} {this.props.Profile.last}</h2>
+						<h2>{this.props.Profile.first} {this.props.Profile.last} | {this.props.Profile.points} Points</h2>
 						<h3>{this.props.Profile.school}</h3>
 					</div>
 					<div class={style.actions}>

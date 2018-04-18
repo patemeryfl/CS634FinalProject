@@ -39,12 +39,13 @@ class Assignments extends Component {
 		},
 		submitAssigment: (number) => {
 			this.props.dispatch({ type: 'SUBMIT_ASSIGNMENT', data: number });
+			this.props.dispatch({ type: 'ADD_POINT' });
 		},
 		changeFilter: (filter) => {
 			this.setState({ filter });
 		}
 	}
-	
+
 	render(props, state) {
 		if (this.state.addAssignmentVisible) {
 			return (
