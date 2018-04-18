@@ -1,5 +1,4 @@
 import { h } from 'preact';
-import DatePicker from 'react-toolbox/lib/date_picker';
 import style from './style';
 import icons from '../../assets/svgs';
 
