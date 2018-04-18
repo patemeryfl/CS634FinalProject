@@ -1,15 +1,15 @@
 const initial = {
 	Profile: {
-		first: "",
-		last: "",
-		school: "",
-		email: "",
-		password: "",
+		first: '',
+		last: '',
+		school: '',
+		email: '',
+		password: '',
 		image: false,
-		signedIn: false,
+		signedIn: false
 	},
 	Account: {
-		signedIn: false,
+		signedIn: false
 	},
 	Upcoming: [],
 	Calendar: [],
