@@ -8,8 +8,8 @@ import style from './style';
 
 class Assignments extends Component {
 	initial = {
-		title: "Assignment Title",
-		notes: "Notes",
+		title: 'Assignment Title',
+		notes: 'Notes',
 		course: null,
 		dueDate: null,
 		submitted: false
@@ -27,6 +27,13 @@ class Assignments extends Component {
 		handleInput: e => {
 			const assignment = this.state.assignment;
 			assignment[e.target.id] = e.target.value;
+			this.setState({ assignment });
+		},
+		setDate: e => {
+			
+			let date = `${e.value.substring(5,7)}/${e.value.substring(8,10)}/${e.value.substring(0,4)}`;
+			const assignment = this.state.assignment;
+			assignment.dueDate = date;
 			this.setState({ assignment });
 		},
 		addAssignment: () => {
@@ -54,6 +61,7 @@ class Assignments extends Component {
 					toggleView={this.actions.toggleAddAssignment}
 					handleSubmit={this.actions.addAssignment}
 					handleChange={this.actions.handleInput}
+					setDate={this.actions.setDate}
 					courses={this.props.Courses}
 				/>
 			);

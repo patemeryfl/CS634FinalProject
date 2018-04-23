@@ -13,7 +13,7 @@ export default {
 			title: 'Priority Scheduling',
 			course: 'CS622',
 			color: '#B71C1C',
-			dueDate: '05/21/2018',
+			dueDate: '04/17/2018',
 			submitted: true
 		},
 		{
@@ -21,6 +21,13 @@ export default {
 			course: 'CS622',
 			color: '#4CAF50',
 			dueDate: '04/21/2018',
+			submitted: false
+		},
+		{
+			title: 'Final Project',
+			course: 'CS672',
+			color: '#673AB7',
+			dueDate: '04/05/2018',
 			submitted: false
 		}
 	],

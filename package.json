@@ -34,7 +34,8 @@
     "preact-redux": "^2.0.3",
     "preact-router": "^2.5.7",
     "react-calendar": "^2.13.5",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "vanilla-datepicker": "^1.1.6"
   },
   "jest": {
     "verbose": true,

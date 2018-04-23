@@ -24,9 +24,9 @@ class CalendarView extends Component {
 							tileContent={
 								({ date }) =>
 									this.props.Assignments.map(assign =>
-										date.getMonth() === assign.dueDate.split('/')[0].charAt(1) - 1
-										&& date.getDay() === assign.dueDate.split('/')[0].charAt(1) ?
-											<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 24 24">
+										date.getMonth() === parseInt(assign.dueDate.split('/')[0].substring(1,2) - 1) &&
+										date.getDate() === parseInt(assign.dueDate.split('/')[1].substring(0,2)) ?
+											<svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 24 24">
 												<circle cx="12" cy="12" r="12" fill={assign.color} />
 											</svg> : null
 									)
